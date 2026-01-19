@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LingShu - TCM Master</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Noto Serif SC', 'serif'],
+            },
+            colors: {
+              tcm: {
+                50: '#f7f7f5',
+                100: '#efefe9',
+                200: '#dcdcd3',
+                300: '#c0c0b3',
+                400: '#a3a393',
+                500: '#8a8a79',
+                600: '#6d6d5f',
+                700: '#5a5a4e',
+                800: '#4a4a42',
+                900: '#3e3e38',
+              },
+              ink: '#2c2c2c',
+              paper: '#fdfbf7',
+              accent: '#b85c5c', // Cinnabar Red
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #f7f7f5;
+        color: #2c2c2c;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
