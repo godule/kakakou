@@ -4,8 +4,8 @@ import { DataContextType, ViewState, Herb, Formula, Acupoint, KnowledgePoint, Sk
 import { INITIAL_HERBS, INITIAL_FORMULAS, INITIAL_ACUPOINTS, INITIAL_KNOWLEDGE, INITIAL_SKILLS } from './constants';
 import FormulaModal from './components/FormulaModal';
 import AdminView from './components/AdminView';
-import AIChatView from './components/AIChatView';
-import { Search, ChevronDown, ChevronUp, MapPin, Pill, Book, Activity, BrainCircuit } from 'lucide-react';
+import ExamModeView from './components/ExamModeView';
+import { Search, ChevronDown, MapPin, Pill, Book, Activity } from 'lucide-react';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<ViewState>('herbs');
@@ -317,7 +317,7 @@ const App: React.FC = () => {
           case 'exam': return '中医重点考点';
           case 'skills': return '临床技能操作';
           case 'admin': return '后台管理系统';
-          case 'ai_chat': return 'AI 灵枢助手';
+          case 'quiz': return '全科模拟考试';
           default: return '';
       }
   }
@@ -329,6 +329,7 @@ const App: React.FC = () => {
           case 'formulas': return '学习君臣佐使的组方艺术。';
           case 'exam': return '备战执业医师与期末考试。';
           case 'skills': return '精进望闻问切与推拿针灸。';
+          case 'quiz': return '随机抽取10道题目进行自我检测。';
           default: return '';
       }
   }
@@ -347,7 +348,7 @@ const App: React.FC = () => {
            </p>
         </div>
         
-        {currentView !== 'ai_chat' && currentView !== 'admin' && (
+        {currentView !== 'quiz' && currentView !== 'admin' && (
              <div className="relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-tcm-400" size={18} />
                 <input 
@@ -368,7 +369,7 @@ const App: React.FC = () => {
       {currentView === 'exam' && renderExam()}
       {currentView === 'skills' && renderSkills()}
       {currentView === 'admin' && <AdminView data={dataContext} />}
-      {currentView === 'ai_chat' && <AIChatView />}
+      {currentView === 'quiz' && <ExamModeView data={dataContext} />}
 
       {/* Modals */}
       <FormulaModal formula={selectedFormula} onClose={() => setSelectedFormula(null)} />

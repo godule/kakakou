@@ -59,7 +59,7 @@ export interface Skill {
 }
 
 // UI State Types
-export type ViewState = 'herbs' | 'acupoints' | 'formulas' | 'exam' | 'skills' | 'admin' | 'ai_chat';
+export type ViewState = 'herbs' | 'acupoints' | 'formulas' | 'exam' | 'skills' | 'admin' | 'quiz';
 
 export interface DataContextType {
   herbs: Herb[];

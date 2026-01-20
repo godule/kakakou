@@ -8,7 +8,7 @@ import {
   Activity, 
   Settings, 
   Menu,
-  Bot
+  PenTool
 } from 'lucide-react';
 
 interface LayoutProps {
@@ -26,7 +26,7 @@ const Layout: React.FC<LayoutProps> = ({ children, currentView, onChangeView }) 
     { id: 'formulas', label: '方剂学', icon: FlaskConical },
     { id: 'exam', label: '重点考点', icon: BookOpen },
     { id: 'skills', label: '技能操作', icon: Activity },
-    { id: 'ai_chat', label: 'AI 灵枢助手', icon: Bot },
+    { id: 'quiz', label: '模拟考试', icon: PenTool },
   ];
 
   const handleNavClick = (view: ViewState) => {
